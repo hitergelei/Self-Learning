@@ -60,10 +60,16 @@ def classify0(inX,dataSet, labels,k):
         print("classCount[",voteIlabel,"]为 ：",classCount[voteIlabel])
         
         #python3中用items()替换python2中的iteritems()
+	
         #key = operator.itemgetter(1)根据字典的值进行排序
         #key = operator.itemgetter(0)根据字典的键进行排列
-        #reverse降序排列字典
+	#如下面例子：
+	# b=sorted(a,key=operator.itemgetter(0)) >>>b=[('a',1),('b',2),('c',0)] 这次比较的是前边的a,b,c而不是0,1,2
+        # b=sorted(a,key=opertator.itemgetter(1,0)) >>>b=[('c',0),('a',1),('b',2)] 这个是先比较第2个元素，然后对第一个元素进行排序，
+	# 形成多级排序。 
+        #reverse = True表示降序排列字典，sorted 中的第2个参数 key=operator.itemgetter(1) 这个参数的意思是先比较第几个元素
         sortedClassCount = sorted(classCount.items(),key = operator.itemgetter(1),reverse = True)
+	#sorted()排序方法不懂的可以参考：http://www.cnblogs.com/HongjianChen/p/8612176.html
         print("sortedClassCount： ",sortedClassCount)
          #返回出现次数最多的value的key
         return sortedClassCount[0][0]
