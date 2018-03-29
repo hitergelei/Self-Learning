@@ -86,6 +86,41 @@ if __name__ == '__main__':
     #打印分类结果
     print(test_class)
      
+ # ------------------------------------------------------------------------------------------------------------------------------------------
+    # 实现 classify0() 方法的第二种方式
+
+    # """
+    # 1. 计算距离
+    
+    # 欧氏距离： 点到点之间的距离
+    #    第一行： 同一个点 到 dataSet的第一个点的距离。
+    #    第二行： 同一个点 到 dataSet的第二个点的距离。
+    #    ...
+    #    第N行： 同一个点 到 dataSet的第N个点的距离。
+
+    # [[1,2,3],[1,2,3]]-[[1,2,3],[1,2,0]]
+    # (A1-A2)^2+(B1-B2)^2+(c1-c2)^2
+    
+    # inx - dataset 使用了numpy broadcasting，见 https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html
+    # np.sum() 函数的使用见 https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.sum.html
+    # """
+	#   dist = np.sum((inx - dataset)**2, axis=1)**0.5
+    
+    # """
+    # 2. k个最近的标签
+    
+    # 对距离排序使用numpy中的argsort函数， 见 https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.sort.html#numpy.sort
+    # 函数返回的是索引，因此取前k个索引使用[0 : k]
+    # 将这k个标签存在列表k_labels中
+    # """
+    # k_labels = [labels[index] for index in dist.argsort()[0 : k]]
+	# """
+    # 3. 出现次数最多的标签即为最终类别
+    
+    # 使用collections.Counter可以统计各个标签的出现次数，most_common返回出现次数最多的标签tuple，例如[('lable1', 2)]，因此[0][0]可以取出标签值
+	# """
+    # label = Counter(k_labels).most_common(1)[0][0]
+    # return label
      
 
     
