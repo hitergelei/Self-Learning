@@ -125,3 +125,45 @@ __输出：__
 参考资料：https://www.cnblogs.com/king-lps/p/7846414.html
 
 ---
+
+## python datetime模块用strftime 格式化时间  
+```Python  
+In [71]: import datetime
+
+In [72]: datetime.datetime.now()
+Out[72]: datetime.datetime(2018, 4, 7, 21, 37, 25, 359873)
+```
+这个会返回 microsecond。因此这个是我们不需要的。所以得做一下修改:  
+```python
+In [73]: datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+Out[73]: '2018-04-07 21:37:52'
+```
+格式化之后，就得到了我们常见的格式了。
+
+《Python Machine Learning CookBook》例题：
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.mlab import csv2rec
+import matplotlib.cbook as cbook
+from matplotlib.ticker import Formatter
+
+# 定义一个类将日期格式化
+class DataFormatter(Formatter):
+    def __init__(self,dates,date_format = '%Y-%m-%d'):
+        self.dates = dates
+        self.date_format = date_format
+
+ #提取'position'位置的时间 t 的值
+def __call__(self,t,position = 0):
+     index = int(round(t))
+     if index >= len(self.dates) or index < 0:
+         return ''
+     return self.dates[index].strftime(self.date_format)
+```
+
+
+
+
+
+
