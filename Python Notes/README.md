@@ -255,4 +255,36 @@ Python允许您使用名为JSON（JavaScript Object Notation）的流行数据�
 
 >注意JSON格式通常由现代应用程序使用以允许数据交换。许多程序员已经熟悉它，这使它成为互操作性的不错选择。
 ![](https://images2018.cnblogs.com/blog/1245030/201804/1245030-20180405224359017-1082518410.png)
+---
 
+## Pandas的 loc iloc ix 区别
+
+__先看代码：__
+
+```python
+In [46]: import pandas as pd
+
+In [47]: data = [[1,2,3],[4,5,6]]
+
+In [48]: index = [0,1]
+
+In [49]: columns=['a','b','c']
+
+In [50]: df = pd.DataFrame(data=data, index=index, columns=columns)
+
+In [51]: df
+Out[51]: 
+   a  b  c
+0  1  2  3
+1  4  5  6
+```
+### 1. loc——通过行标签索引行数据   
+```python
+
+In [52]: df.loc[1]
+Out[52]: 
+a    4
+b    5
+c    6
+Name: 1, dtype: int64
+```
