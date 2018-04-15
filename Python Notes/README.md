@@ -288,3 +288,96 @@ b    5
 c    6
 Name: 1, dtype: int64
 ```
+### 1.2 loc['d']表示索引的是第’d’行（index 是字符）  
+```python
+In [53]: import pandas as pd    
+    ...: data = [[1,2,3],[4,5,6]]    
+    ...: index = ['d','e']    
+    ...: columns=['a','b','c']    
+    ...: df = pd.DataFrame(data=data, index=index, columns=columns)
+    ...: 
+
+In [54]: df
+Out[54]: 
+   a  b  c
+d  1  2  3
+e  4  5  6
+
+In [55]: df.loc['d']
+Out[55]: 
+a    1
+b    2
+c    3
+Name: d, dtype: int64
+```
+### 1.3 如果想索引列数据，像这样做会报错  
+```
+In [56]: df.loc['a']
+Traceback (most recent call last):
+
+  File "<ipython-input-56-5dbae926782f>", line 1, in <module>
+    df.loc['a']
+
+  File "E:\Anaconda\lib\site-packages\pandas\core\indexing.py", line 1328, in __getitem__
+    return self._getitem_axis(key, axis=0)
+    ...
+KeyError: 'the label [a] is not in the [index]'
+```
+### 1.4 loc可以获取多行数据 
+```python
+
+In [57]: df.loc['d':]
+Out[57]: 
+   a  b  c
+d  1  2  3
+e  4  5  6
+```
+### 1.5 loc扩展——索引某行某列
+```python
+In [58]: df.loc['d',['b','c']]
+Out[58]: 
+b    2
+c    3
+Name: d, dtype: int64
+```
+### 1.6 loc扩展——索引某列
+```python
+In [59]: df.loc[:,['c']]
+Out[59]: 
+   c
+d  3
+e  6
+```  
+
+当然获取某列数据最直接的方式是df.[列标签]，但是当列标签未知时可以通过这种方式获取列数据。  
+ 
+__需要注意的是__，dataframe的索引[1:3]是包含1,2,3的，与平时的不同。
+
+### 2. iloc——通过行号获取行数据 
+
+### 2.1 想要获取哪一行就输入该行数字  
+先看之前```df```数据：
+```
+In [54]: df
+Out[54]: 
+   a  b  c
+d  1  2  3
+e  4  5  6
+```
+现在调用```iloc```命令  
+```python
+In [60]: df.iloc[1]  #获取第1行
+Out[60]: 
+a    4
+b    5
+c    6
+Name: e, dtype: int64
+
+In [61]: df.iloc[0]  #获取第0行
+Out[61]: 
+a    1
+b    2
+c    3
+Name: d, dtype: int64
+```
+
