@@ -357,7 +357,7 @@ __需要注意的是__，dataframe的索引[1:3]是包含1,2,3的，与平时的
 
 ### 2.1 想要获取哪一行就输入该行数字  
 先看之前```df```数据：
-```
+```python
 In [54]: df
 Out[54]: 
    a  b  c
@@ -380,4 +380,74 @@ b    2
 c    3
 Name: d, dtype: int64
 ```
+### 2.2 通过行标签索引会报错  
+```python
+In [62]: df.iloc['a']
+Traceback (most recent call last):
 
+  File "<ipython-input-62-0c5fe4e92254>", line 1, in <module>
+    df.iloc['a']
+
+  File "E:\Anaconda\lib\site-packages\pandas\core\indexing.py", line 1328, in __getitem__
+    return self._getitem_axis(key, axis=0)
+  ...
+
+TypeError: cannot do positional indexing on <class 'pandas.core.indexes.base.Index'> with these indexers [a] of <class 'str'>
+```
+### 2.3 同样通过行号可以索引多行 
+```python
+In [63]: df.iloc[0:]   #获取0和其他行
+Out[63]: 
+   a  b  c
+d  1  2  3
+e  4  5  6
+```
+### 2.4 iloc索引列数据  
+```python
+In [64]: df.iloc[:,[0]]
+Out[64]: 
+   a
+d  1
+e  4
+
+In [65]: df.iloc[:,[1]]
+Out[65]: 
+   b
+d  2
+e  5
+```
+
+### 3. ix——结合前两种的混合索引 (现在ix用法不推荐，这是Python2.x常用的）
+
+### 3.1 通过行号索引 
+
+先看之前```df```数据：
+```python
+In [54]: df
+Out[54]: 
+   a  b  c
+d  1  2  3
+e  4  5  6
+```
+现在看看```.ix```用法
+```python
+In [66]: df.ix[1]
+__main__:1: DeprecationWarning: .ix is deprecated. Please use .loc for label based indexing or .iloc for positional indexing
+
+See the documentation here: http://pandas.pydata.org/pandas-docs/stable/indexing.html#deprecate_ix
+Out[66]: 
+a    4
+b    5
+c    6
+Name: e, dtype: int64
+```
+### 3.2 通过行标签索引  
+```python
+In [67]: df.ix['e']
+Out[67]: 
+a    4
+b    5
+c    6
+Name: e, dtype: int64
+
+```
