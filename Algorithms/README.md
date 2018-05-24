@@ -151,8 +151,9 @@ T(n) = O(n\*n\*(1+1)) = O(n\*n) = O(n^2)
 | :---:         | :---: | :---: |  
 |12	            | O(1)	 | 常数阶 |  
 |2n+3	          | O(n)	 | 线性阶 |     
-|3n^2+2n+1      |	O(n^2) | 平方阶 |   
-|\5log_{2}n+20  | O(logn)| 对数阶 |    
-|2n+3nlog2n+19  |	O(nlogn)|	nlogn阶 |   
-|6n^3+2n^2+3n+4 |	O(n3)	  |立方阶|  
-|2n	            |O(2n)   |	指数阶 |
+|<a href="https://www.codecogs.com/eqnedit.php?latex=3n^2&plus;2n&plus;1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?3n^2&plus;2n&plus;1" title="3n^2+2n+1" /></a>     |	O(n^2) | 平方阶 |   
+|<a href="https://www.codecogs.com/eqnedit.php?latex=5log_{2}n&space;&plus;&space;20" target="_blank"><img src="https://latex.codecogs.com/gif.latex?5log_{2}n&space;&plus;&space;20" title="5log_{2}n + 20" /></a>  | O(logn)| 对数阶 |    
+|<a href="https://www.codecogs.com/eqnedit.php?latex=2n&plus;3nlog_{2}n&plus;3n&plus;4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?2n&plus;3nlog_{2}n&plus;3n&plus;4" title="2n+3nlog_{2}n+3n+4" /></a> |	O(nlogn)|	nlogn阶 |   
+|<a href="https://www.codecogs.com/eqnedit.php?latex=6n^3&plus;2n^2&plus;3n&plus;4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?6n^3&plus;2n^2&plus;3n&plus;4" title="6n^3+2n^2+3n+4" /></a> |	O(n^3)	  |立方阶|  
+|<a href="https://www.codecogs.com/eqnedit.php?latex=2^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?2^n" title="2^n" /></a>            |<a href="https://www.codecogs.com/eqnedit.php?latex=O(2^n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?O(2^n)" title="O(2^n)" /></a>   |	指数阶 |
+
