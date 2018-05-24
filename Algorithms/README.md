@@ -166,6 +166,10 @@ T(n) = O(n\*n\*(1+1)) = O(n\*n) = O(n^2)
 ![](https://images2018.cnblogs.com/blog/1245030/201805/1245030-20180524224554034-1317527078.png)
 
 **1.7Python内置类型性能分析**  
+
 timeit模块  
 timeit模块可以用来测试一小段Python代码的执行速度。  
-class timeit.Timer(stmt='pass', setup='pass', timer=<timer function>)  
+```Python
+class timeit.Timer(stmt='pass', setup='pass', timer=<timer function>)
+```
+
