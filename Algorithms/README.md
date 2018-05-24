@@ -157,3 +157,11 @@ T(n) = O(n\*n\*(1+1)) = O(n\*n) = O(n^2)
 |<a href="https://www.codecogs.com/eqnedit.php?latex=6n^3&plus;2n^2&plus;3n&plus;4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?6n^3&plus;2n^2&plus;3n&plus;4" title="6n^3+2n^2+3n+4" /></a> |	O(n^3)	  |立方阶|  
 |<a href="https://www.codecogs.com/eqnedit.php?latex=2^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?2^n" title="2^n" /></a>            |<a href="https://www.codecogs.com/eqnedit.php?latex=O(2^n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?O(2^n)" title="O(2^n)" /></a>   |	指数阶 |
 
+**注意，经常将log2n（以2为底的对数）简写成logn**   
+常见时间复杂度之间的关系:
+
+![](https://images2018.cnblogs.com/blog/1245030/201805/1245030-20180524224415494-369133846.png)
+
+所消耗的时间从小到大:
+![](https://images2018.cnblogs.com/blog/1245030/201805/1245030-20180524224554034-1317527078.png)
+
